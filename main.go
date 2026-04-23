@@ -4,7 +4,7 @@ import "encoding/json"
 import "net/http"
 import "os"
 import "log"
-import "strings"
+import "fmt"
 
 type Citation struct {
 	Citing string `json:"citing"`
@@ -27,13 +27,8 @@ func main() {
 		err = json.NewDecoder(resp.Body).Decode(&citations)
 		CatchError(err)
 
-		f, err := os.OpenFile(strings.ReplaceAll(arg, "/", "_") + ".txt", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
-		CatchError(err)
-		defer f.Close()
-
 		for _, citation := range citations {
-			_, err = f.WriteString("https://doi.org/" + citation.Citing + "\n")
-			CatchError(err)
+			fmt.Println("https://doi.org/" + citation.Citing + "\n")
 		}
 	}
 }

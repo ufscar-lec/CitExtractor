@@ -13,14 +13,10 @@ To run the program, open the terminal inside the directory you have the binaries
 
 For Linux:
 
-    ./citextractor-linux-amd64 [DOI1] [DOI2] ... [DOIX]
+    ./citextractor-linux-amd64 [DOI1] [DOI2] ... [DOIX] > results.txt
 
 For Windows:
 
-    .\citextractor-windows-x86-64.exe [DOI1] [DOI2] ... [DOIX]
+    .\citextractor-windows-x86-64.exe [DOI1] [DOI2] ... [DOIX] > results.txt
 
 Replace the `DOI` args with your DOI (e.g., `10.1234/1234`).
-
-### 3- Checking the Results
-
-The results are going to be saved in a `.txt` file with the name of the DOI you provided.
